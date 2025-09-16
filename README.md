@@ -32,18 +32,18 @@ The app analyses your CV against a job posting, scores how well you match, sugge
 ## Tech Stack
 
 ### Current
-- **Python** – Core backend language.  
-- **pdfplumber / python-docx** – CV parsing from PDF and DOCX.  
-- **FastAPI** – API layer to handle requests.  
-- **External AI API (OpenAI / Anthropic / Cohere)** – Analyse CVs, job posts, and generate suggestions/cover letters.  
+- **Python** – Core backend language.
+- **pdfplumber / python-docx** – CV parsing from PDF and DOCX.
+- **FastAPI** – API layer to handle requests.
+- **External AI API (OpenAI / Anthropic / Cohere)** – Analyse CVs, job posts, and generate suggestions/cover letters.
 
 ### Planned
-- **React** – Frontend UI for users (production-ready).  
-- **BeautifulSoup / Playwright** – Scraping job postings from links (LinkedIn, Indeed).  
-- **PostgreSQL** – Database to store CVs, job posts, fit scores, and outputs.  
-- **Docker** – Containerisation for easier deployment.  
-- **Celery + Redis** – Background tasks (scraping, AI analysis).  
-- **Supabase / Firebase** – Optional auth and storage for faster setup.  
+- **React** – Frontend UI for users (production-ready).
+- **BeautifulSoup / Playwright** – Scraping job postings from links (LinkedIn, Indeed).
+- **PostgreSQL** – Database to store CVs, job posts, fit scores, and outputs.
+- **Docker** – Containerisation for easier deployment.
+- **Celery + Redis** – Background tasks (scraping, AI analysis).
+- **Supabase / Firebase** – Optional auth and storage for faster setup.
 
 ---
 
