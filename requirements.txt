@@ -1,2 +1,4 @@
 pre-commit
 pypdf
+requests
+bs4
