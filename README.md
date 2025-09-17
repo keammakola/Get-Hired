@@ -50,5 +50,5 @@ The app analyses your CV against a job posting, scores how well you match, sugge
 ## Usage (prototype)
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/get-hired.git
+   git clone https://github.com/keammakola/get-hired.git
    cd get-hired
