@@ -1,4 +1,4 @@
 pre-commit
 pypdf
 requests
-bs4
+beautifulsoup4
