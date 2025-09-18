@@ -12,6 +12,3 @@ def scrape_web():
 
     with open("userdata/jobs/job_page.txt", "w") as f:
         f.write(page)
-
-
-print(scrape_web())
