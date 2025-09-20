@@ -10,11 +10,9 @@ def cv_cleaner(cv):
         file_content = file.read()
     response = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents=f"Please structure my CV in an ATS-compatible format. Provide only the formatted CV in markdown that can be converted to pdf, with no additional explanation or text. Here is my current cv \n {file_content}",
+        contents=f"Please structure my CV in an ATS-compatible format. Provide only the formatted CV in markdown that can be converted to pdf, with no additional explanation or text.This will be the final version, so no placeholders. Here is my current cv \n {file_content}",
     )
     with open("userdata/processed cv/new_cv.md", "w") as f:
         f.write(response.text)
     print("Your new CV is now ready for viewing")
-
-
-cv_cleaner("userdata/unprocessed cv/mycv.txt")
+    return response.text

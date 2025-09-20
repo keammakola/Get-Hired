@@ -1,5 +1,6 @@
 from pdf_mngr import parse_pdf
 from job_mngr import scrape_web, paste_to_text
+from ai_tools import cv_cleaner
 import os
 
 print("Welcome to Get_Hired!")
@@ -22,4 +23,14 @@ while True:
         break
     else:
         os.system("clear")
-        print("Invalid entry. Lets try again.")
+        print("Invalid entry. Let's try again.")
+while True:
+    cv_query = input("Would you like your CV to be ATS compatible?\n1. Yes\n2. No\n\n>")
+    if cv_query == "1":
+        print(cv_cleaner("userdata/unprocessed cv/mycv.txt"))
+
+        break
+    elif cv_query == "2":
+        break
+    else:
+        print("Invalid entry. Let's try again.")
