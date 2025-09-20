@@ -16,3 +16,8 @@ def cv_cleaner(cv):
         f.write(response.text)
     print("Your new CV is now ready for viewing")
     return response.text
+
+
+# maybe manually inputting all the details needed for the cv
+# tool that will now personalise the cv for the specific job post
+# repurpose cv cleaner to be a tool that creates a generic cv for user
