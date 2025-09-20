@@ -6,3 +6,6 @@ pre-commit:
 	pre-commit run --all-files
 run:
 	python3 src/main.py
+
+api:
+	pip install -q -U google-genai

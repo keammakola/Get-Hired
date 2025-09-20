@@ -9,9 +9,9 @@ def parse_pdf():
             raise FileNotFoundError("File does not exist")
 
         reader = PdfReader(pdf_path)
-        os.makedirs("userdata/processed cv", exist_ok=True)
+        os.makedirs("userdata/unprocessed cv", exist_ok=True)
 
-        with open("userdata/processed cv/mycv.txt", "w") as f:
+        with open("userdata/unprocessed cv/mycv.txt", "w") as f:
             for page in reader.pages:
                 text = page.extract_text()
                 f.write(text)
