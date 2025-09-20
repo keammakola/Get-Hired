@@ -13,8 +13,9 @@ def scrape_web():
     with open("userdata/jobs/job_page.txt", "w") as f:
         f.write(page)
 
+
 def paste_to_text():
     txt = input(">")
     os.makedirs("userdata/jobs", exist_ok=True)
-    with open("userdata/jobs/job_page.txt","w") as f:
+    with open("userdata/jobs/job_page.txt", "w") as f:
         f.write(txt)
