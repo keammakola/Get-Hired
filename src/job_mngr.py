@@ -22,7 +22,7 @@ def scrape_web():
     >>> scrape_web()
     Please provide the job link: https://example.com/job
     """
-    print("Please provide the job link:")
+    print("Please provide the job link (LinkedIn posts support coming soon!):")
     web_link = input(">")
     page = requests.get(web_link)
     page = BeautifulSoup(page.content, "html.parser")

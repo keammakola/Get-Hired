@@ -89,6 +89,24 @@ def cv_scorer(cv):
     return response.text
 
 
+def compatibility_checker(cv, job):
+    api_key = os.getenv("GEMINI_API_KEY")
+    client = genai.Client(api_key=api_key)
+    os.makedirs("userdata/ai_analysis", exist_ok=True)
+    with open(cv, "r") as file:
+        file_content = file.read()
+    with open(job, "r") as file:
+        job_data = file.read()
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=f"Here is my CV {file_content}\nplease check if Im compatible for this job {job_data}",
+    )
+    # with open("userdata/ai_analysis/cv_score.md", "w") as f:
+    #     f.write(response.text)
+    print(response.text)
+    return response.text
+
+
 # maybe manually inputting all the details needed for the cv
 # tool that will now personalise the cv for the specific job post
 # repurpose cv cleaner to be a tool that creates a generic cv for user

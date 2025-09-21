@@ -1,6 +1,6 @@
 # Import required modules
 from pdf_mngr import parse_pdf
-from ai_tools import cv_analyser, cv_scorer
+from ai_tools import cv_analyser, cv_scorer, compatibility_checker
 from job_mngr import scrape_web, paste_to_text
 import os
 
@@ -37,11 +37,15 @@ while True:
         # Submenu for job information input method
         while True:
             usage = input(
-                "Would you like to:\n1. Provide job link\n2. Paste job information\n>"
+                "Would you like to:\n1. Provide job post link\n2. Paste job information\n>"
             )
             # Option 1: Web scraping
             if usage == "1":
-                scrape_web()
+                print(
+                    "This feature is still in development, for now we would recommend you copy and paste the contents of the webpage"
+                )
+                # scrape_web()
+                paste_to_text()
                 break
             # Option 2: Manual input
             elif usage == "2":
@@ -50,6 +54,13 @@ while True:
             # Handle invalid input
             else:
                 print("Invalid entry. Let's try again")
+            print(
+                "The job details have been captured sucessfully. Now we will check if your CV is compatible with this job"
+            )
+            compatibility_checker(
+                "userdata/unprocessed cv/mycv.md", "userdata/jobs/job_page.txt"
+            )
+
         break
 
     # Handle invalid main menu input
