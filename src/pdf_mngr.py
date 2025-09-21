@@ -11,7 +11,7 @@ def parse_pdf():
         reader = PdfReader(pdf_path)
         os.makedirs("userdata/unprocessed cv", exist_ok=True)
 
-        with open("userdata/unprocessed cv/mycv.txt", "w") as f:
+        with open("userdata/unprocessed cv/mycv.md", "w") as f:
             for page in reader.pages:
                 text = page.extract_text()
                 f.write(text)

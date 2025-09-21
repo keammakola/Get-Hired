@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 
 def scrape_web():
+    print("Please provide the job link:")
     web_link = input(">")
     page = requests.get(web_link)
     page = BeautifulSoup(page.content, "html.parser")
@@ -15,6 +16,7 @@ def scrape_web():
 
 
 def paste_to_text():
+    print("paste the job information:")
     txt = input(">")
     os.makedirs("userdata/jobs", exist_ok=True)
     with open("userdata/jobs/job_page.txt", "w") as f:

@@ -5,6 +5,7 @@ setup:
 pre-commit:
 	pre-commit run --all-files
 run:
+	clear
 	python3 src/main.py
 
 api:

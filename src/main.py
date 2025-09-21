@@ -1,36 +1,45 @@
 from pdf_mngr import parse_pdf
+from ai_tools import cv_analyser, cv_scorer
 from job_mngr import scrape_web, paste_to_text
-from ai_tools import cv_cleaner
 import os
 
-print("Welcome to Get_Hired!")
-print("First, let's get to know you")
+print("Welcome to Get Hired!\n")
+
+print("Let's start off by adding your CV into the system")
 parse_pdf()
+os.system("clear")
+print("Great. Your CV has been uploaded successfully!")
+
 while True:
-    job_input = input(
-        "\nWould you like to:\n1. Paste the link to the job advert(LinkedIn link support coming soon!)\n2. Paste the text from the job advert\n>"
+    usage = input(
+        "What would you like to do?\n1. Get a detailed analysis of your CV\n2. Check ATS compatibility of your CV\n3. Curate CV for a job opportunity\n>"
     )
-    if job_input == "1":
+    if usage == "1":
         os.system("clear")
-        print("Now, give us the link for the job post you are applying for")
-        scrape_web()
+        print("CV analysis in progress...")
+        print(cv_analyser("userdata/unprocessed cv/mycv.md"))
         break
-    elif job_input == "2":
+    elif usage == "2":
         os.system("clear")
-        print("Please paste the text copied from the job advert")
-        paste_to_text()
+        print("CV scoring in progress...")
+        print(cv_scorer("userdata/unprocessed cv/mycv.md"))
+        break
+    elif usage == "3":
+        os.system("clear")
+        while True:
+            usage = input(
+                "Would you like to:\n1. Provide job link\n2. Paste job information\n>"
+            )
+            if usage == "1":
+                scrape_web()
+                break
+            elif usage == "2":
+                paste_to_text()
+                break
+            else:
+                print("Invalid entry. Let's try again")
+        break
 
-        break
     else:
+        print("That's an invalid entry, lets try again.")
         os.system("clear")
-        print("Invalid entry. Let's try again.")
-while True:
-    cv_query = input("Would you like your CV to be ATS compatible?\n1. Yes\n2. No\n\n>")
-    if cv_query == "1":
-        print(cv_cleaner("userdata/unprocessed cv/mycv.txt"))
-
-        break
-    elif cv_query == "2":
-        break
-    else:
-        print("Invalid entry. Let's try again.")
