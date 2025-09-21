@@ -2,3 +2,6 @@ pre-commit
 pypdf
 requests
 beautifulsoup4
+pytest
+pytest-mock
+google-generativeai

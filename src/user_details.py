@@ -4,4 +4,5 @@ def basic_info():
     print(surname)
 
 
-basic_info()
+if __name__ == "__main__":
+    basic_info()
