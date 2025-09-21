@@ -3,6 +3,24 @@ import os
 
 
 def parse_pdf():
+    """
+    Parse the given PDF file and save the text content to userdata/unprocessed cv/mycv.md
+
+    Parameters
+    ----------
+    None
+
+    Returns
+    -------
+    None
+
+    Raises
+    ------
+    FileNotFoundError
+        If the file does not exist
+    Exception
+        If any other error occurs during parsing
+    """
     try:
         pdf_path = input("Enter the path to the PDF file: ")
         if not os.path.exists(pdf_path):

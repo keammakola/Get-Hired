@@ -3,6 +3,19 @@ import os
 
 
 def cv_cleaner(cv):
+    """
+    Structure the user's CV into an ATS-compatible format.
+
+    Parameters
+    ----------
+    cv : str
+        The path to the user's CV file.
+
+    Returns
+    -------
+    str
+        The formatted CV in markdown format.
+    """
     api_key = os.getenv("GEMINI_API_KEY")
     client = genai.Client(api_key=api_key)
     os.makedirs("userdata/processed cv", exist_ok=True)
@@ -18,6 +31,19 @@ def cv_cleaner(cv):
 
 
 def cv_analyser(cv):
+    """
+    Analyse the user's CV in accordance to ATS format.
+
+    Parameters
+    ----------
+    cv : str
+        The path to the user's CV file.
+
+    Returns
+    -------
+    str
+        The analysis of the user's CV in markdown format.
+    """
     api_key = os.getenv("GEMINI_API_KEY")
     client = genai.Client(api_key=api_key)
     os.makedirs("userdata/ai_analysis", exist_ok=True)
@@ -33,6 +59,19 @@ def cv_analyser(cv):
 
 
 def cv_scorer(cv):
+    """
+    Analyse the user's CV in accordance to ATS format and score it.
+
+    Parameters
+    ----------
+    cv : str
+        The path to the user's CV file.
+
+    Returns
+    -------
+    str
+        The analysis of the user's CV in markdown format and the score.
+    """
     api_key = os.getenv("GEMINI_API_KEY")
     client = genai.Client(api_key=api_key)
     os.makedirs("userdata/ai_analysis", exist_ok=True)
