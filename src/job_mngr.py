@@ -1,6 +1,7 @@
 import requests
 import os
 from bs4 import BeautifulSoup
+from ai_tools import job_description_normaliser
 
 
 def scrape_web():
@@ -26,11 +27,9 @@ def scrape_web():
     web_link = input(">")
     page = requests.get(web_link)
     page = BeautifulSoup(page.content, "html.parser")
-    os.makedirs("userdata/jobs", exist_ok=True)
-    page = page.get_text(separator="\n", strip=True)
 
-    with open("userdata/jobs/job_page.txt", "w") as f:
-        f.write(page)
+    info, name = job_description_normaliser(page)
+    return info, name
 
 
 def paste_to_text():
@@ -50,6 +49,4 @@ def paste_to_text():
     """
     print("paste the job information:")
     txt = input(">")
-    os.makedirs("userdata/jobs", exist_ok=True)
-    with open("userdata/jobs/job_page.txt", "w") as f:
-        f.write(txt)
+    return job_description_normaliser(txt)
