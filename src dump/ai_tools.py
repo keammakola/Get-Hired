@@ -1,6 +1,8 @@
 from google import genai
 import os
-
+from dotenv import load_dotenv 
+load_dotenv()
+ from tools
 
 def cv_cleaner(cv):
     """
@@ -109,6 +111,7 @@ def cover_generator(job, cv_data):
     with open("userdata/final docs/coverletter.md", "w") as f:
         f.write(response.text)
     return response.text
+
 
 
 # maybe manually inputting all the details needed for the cv

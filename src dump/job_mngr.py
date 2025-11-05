@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from ai_tools import job_description_normaliser
 
 
+
 def scrape_web():
     """
     Scrape the job page from the given link and save the content to a file.
