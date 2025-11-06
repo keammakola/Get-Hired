@@ -11,3 +11,6 @@ run:
 
 api:
 	./venv/bin/pip install -q -U google-genai
+
+flask:
+	./venv/bin/python app.py

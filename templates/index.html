@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Upload Your CV</h2>
+    <form action="/upload_cv" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="cv_file">Choose CV file (PDF or DOCX):</label>
+            <input type="file" id="cv_file" name="cv_file" accept=".pdf,.docx" required>
+        </div>
+        <button type="submit" class="btn">Upload CV</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2>Job Posting</h2>
+    <form action="/job_posting" method="post">
+        <div class="form-group">
+            <label for="job_type">How would you like to provide the job posting?</label>
+            <select id="job_type" name="job_type" onchange="toggleJobInput()" required>
+                <option value="">Select option</option>
+                <option value="link">Job Link</option>
+                <option value="text">Job Text</option>
+            </select>
+        </div>
+
+        <div id="job_link_input" style="display: none;">
+            <div class="form-group">
+                <label for="job_link">Job Link:</label>
+                <input type="url" id="job_link" name="job_link" placeholder="https://...">
+            </div>
+        </div>
+
+        <div id="job_text_input" style="display: none;">
+            <div class="form-group">
+                <label for="company_name">Company Name:</label>
+                <input type="text" id="company_name" name="company_name">
+            </div>
+            <div class="form-group">
+                <label for="job_info">Job Description:</label>
+                <textarea id="job_info" name="job_info" placeholder="Paste the job description here..."></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="btn">Save Job Posting</button>
+    </form>
+</div>
+
+<script>
+function toggleJobInput() {
+    const jobType = document.getElementById('job_type').value;
+    const linkInput = document.getElementById('job_link_input');
+    const textInput = document.getElementById('job_text_input');
+
+    if (jobType === 'link') {
+        linkInput.style.display = 'block';
+        textInput.style.display = 'none';
+    } else if (jobType === 'text') {
+        linkInput.style.display = 'none';
+        textInput.style.display = 'block';
+    } else {
+        linkInput.style.display = 'none';
+        textInput.style.display = 'none';
+    }
+}
+</script>
+{% endblock %}

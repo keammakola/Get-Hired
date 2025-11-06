@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>CV Successfully Uploaded</h2>
+    <p>Your CV has been processed. You can now analyze it against a job posting.</p>
+
+    <form action="/analyze" method="post">
+        <input type="hidden" name="cv_content" value="{{ cv_content }}">
+        <div class="form-group">
+            <label for="company_name">Company Name (for analysis):</label>
+            <input type="text" id="company_name" name="company_name" required>
+        </div>
+        <button type="submit" class="btn">Analyze CV Fit</button>
+    </form>
+</div>
+
+<div class="container">
+    <h3>CV Preview</h3>
+    <div style="background: white; padding: 15px; border: 1px solid #ddd; border-radius: 4px; max-height: 300px; overflow-y: auto;">
+        {{ cv_content[:500] }}{% if cv_content|length > 500 %}...{% endif %}
+    </div>
+</div>
+
+<a href="/" class="btn" style="display: inline-block; margin-top: 20px;">Start Over</a>
+{% endblock %}

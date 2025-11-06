@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>CV Analysis Results</h2>
+    <div style="background: white; padding: 15px; border: 1px solid #ddd; border-radius: 4px;">
+        {{ cv_report }}
+    </div>
+</div>
+
+<div class="container">
+    <h3>Next Steps</h3>
+
+    <form action="/improve_cv" method="post" style="display: inline-block; margin-right: 10px;">
+        <input type="hidden" name="cv_report" value="{{ cv_report }}">
+        <input type="hidden" name="cv_content" value="{{ cv_content }}">
+        <button type="submit" class="btn">Improve My CV</button>
+    </form>
+
+    <form action="/generate_cover_letter" method="post" style="display: inline-block;">
+        <input type="hidden" name="cv_content" value="{{ cv_content }}">
+        <input type="hidden" name="company_name" value="{{ company_name }}">
+        <button type="submit" class="btn">Generate Cover Letter</button>
+    </form>
+</div>
+
+<a href="/" class="btn" style="display: inline-block; margin-top: 20px;">Start Over</a>
+{% endblock %}
