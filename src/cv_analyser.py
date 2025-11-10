@@ -5,10 +5,11 @@ from google import genai
 from google.genai.errors import ServerError
 from dotenv import load_dotenv
 
-load_dotenv()
+
 
 
 def cv_analyser(pdf_path):
+    load_dotenv()
     api_key = os.getenv("GEMINI_API_KEY")
     client = genai.Client(api_key=api_key)
 
@@ -27,7 +28,7 @@ def cv_analyser(pdf_path):
     system_prompt = (
         "You are a professional CV analyst. Your goal is to provide a comprehensive "
         "review based strictly on the provided rubric. The response MUST ONLY contain "
-        "three markdown sections: 'What's Great', 'What's Lacking', and 'Recommended Actionables'. "
+        "three markdown sections: 'What's Great', 'What's Lacking',  'Recommended Actionables' , and a final CV score out of 100. "
         "Be direct, concise, and professional."
     )
 
@@ -62,6 +63,3 @@ def cv_analyser(pdf_path):
         client.files.delete(name=uploaded_file.name)
         print("File successfully deleted from the service.")
 
-
-if __name__ == "__main__":
-   cv_analyser("Sample.pdf")
