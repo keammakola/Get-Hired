@@ -1,7 +1,7 @@
 import os
 from job_collector import job_scraper
 from tools import file_creator,cv_extractor, cv_scorer, cv_improver,cover_letter
-from cv_collector import collect_cv_info
+from cv_builder import collect_cv_info
 
 print("Welcome to Get Hired")
 

@@ -1,6 +1,7 @@
 import os
 from pypdf import PdfReader
 from google import genai
+from dotenv import load_dotenv
 
 
 
