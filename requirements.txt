@@ -7,3 +7,4 @@ pytest-mock
 google-generativeai
 google-genai
 python-dotenv
+pylatex

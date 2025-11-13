@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 def cv_analyser(pdf_path):
     load_dotenv()
     api_key = os.getenv("GEMINI_API_KEY")
-    client = genai.Client(api_key=api_key)
+    client = genai.Client(api_key=api_key) 
 
     rubric_path = "resources/rubric.md"
     output_dir = "userdata/analysis"
@@ -63,3 +63,4 @@ def cv_analyser(pdf_path):
         client.files.delete(name=uploaded_file.name)
         print("File successfully deleted from the service.")
 
+cv_analyser("Sample.pdf")
