@@ -1,0 +1,153 @@
+% ----------------------------------------------------
+% Base LaTeX Template - Placeholders for Python Script
+% ----------------------------------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{enumitem} % Added for itemize customization
+\usepackage{xcolor} % Required for color commands
+
+% --- Custom Commands (Required for the structure below) ---
+% Note: You would normally include all the custom commands from the original
+% template here to make it fully compilable, but for the Python script's
+% purpose, we only need the structure commands.
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{-1pt}\item
+\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+\textbf{#1} & #2 \\
+\textit{\small#3} & \textit{\small #4} \\
+\end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeItem}[2]{
+\item\small{
+\textbf{#1}{: #2 \vspace{-2pt}}
+}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% --- Layout Settings ---
+\pagestyle{empty}
+\urlstyle{same}
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% --- DOCUMENT START ---
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{\href{__WEBSITE__}{\Large __FULL_NAME__}} & Email: \href{mailto:__EMAIL__}{__EMAIL__}\\
+\href{__WEBSITE__}{__WEBSITE__} & Mobile: \href{tel:+__PHONE__}{__PHONE__} \\
+\href{__LINKEDIN__}{__LINKEDIN__} & \\
+\end{tabular*}
+
+%-----------PROFESSIONAL SUMMARY-----------------
+\section{Professional Summary}
+__PROFESSIONAL_SUMMARY__
+
+%-----------EDUCATION-----------------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{__UNIVERSITY__}{__UNI_LOCATION__}
+{__DEGREE__}{__UNI_DATES__}
+\resumeSubHeadingListEnd
+
+%-----------TECH STACK-----------------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=*]
+\item \textbf{Programming Languages:} __PROGRAMMING_LANGUAGES__
+\item \textbf{Frameworks \& Libraries:} __FRAMEWORKS__
+\item \textbf{Databases:} __DATABASES__
+\item \textbf{Tools \& Technologies:} __TOOLS__
+\end{itemize}
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {__COMPANY__}{__COMP_LOCATION__}
+  {__JOB_TITLE__}{__JOB_DATES__}
+  \resumeItemListStart
+    \resumeItem{__PROJECT_1_TITLE__}
+      {__PROJECT_1_DESC__}
+    \resumeItem{__PROJECT_2_TITLE__}
+      {__PROJECT_2_DESC__}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {__PERSONAL_PROJECT_1__}{__PROJECT_1_TECH__}
+  {__PROJECT_1_ROLE__}{__PROJECT_1_DATES__}
+  \resumeItemListStart
+    \resumeItem{Description}
+      {__PERSONAL_PROJECT_1_DESC__}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {__PERSONAL_PROJECT_2__}{__PROJECT_2_TECH__}
+  {__PROJECT_2_ROLE__}{__PROJECT_2_DATES__}
+  \resumeItemListStart
+    \resumeItem{Description}
+      {__PERSONAL_PROJECT_2_DESC__}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------------
+\section{Skills}
+\begin{itemize}[leftmargin=*]
+\item \textbf{Technical Skills:} __TECHNICAL_SKILLS__
+\item \textbf{Soft Skills:} __SOFT_SKILLS__
+\end{itemize}
+
+%-----------CERTIFICATES-----------------
+\section{Certifications}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {__CERT_1_NAME__}{__CERT_1_ISSUER__}
+  {__CERT_1_ID__}{__CERT_1_DATE__}
+
+\resumeSubheading
+  {__CERT_2_NAME__}{__CERT_2_ISSUER__}
+  {__CERT_2_ID__}{__CERT_2_DATE__}
+
+\resumeSubHeadingListEnd
+
+%-----------LANGUAGES-----------------
+\section{Languages}
+\begin{itemize}[leftmargin=*]
+\item __LANGUAGES__
+\end{itemize}
+
+%-----------VOLUNTEERING-----------------
+\section{Volunteering}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {__VOLUNTEER_ORG__}{__VOLUNTEER_LOCATION__}
+  {__VOLUNTEER_ROLE__}{__VOLUNTEER_DATES__}
+  \resumeItemListStart
+    \resumeItem{Contribution}
+      {__VOLUNTEER_DESC__}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\end{document}
