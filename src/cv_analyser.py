@@ -6,12 +6,10 @@ from google.genai.errors import ServerError
 from dotenv import load_dotenv
 
 
-
-
 def cv_analyser(pdf_path):
     load_dotenv()
     api_key = os.getenv("GEMINI_API_KEY")
-    client = genai.Client(api_key=api_key) 
+    client = genai.Client(api_key=api_key)
 
     rubric_path = "resources/rubric.md"
     output_dir = "userdata/analysis"
@@ -42,8 +40,7 @@ def cv_analyser(pdf_path):
     for attempt in range(max_retries):
         try:
             response = client.models.generate_content(
-                model="gemini-2.5-flash",
-                contents=[uploaded_file, user_query]
+                model="gemini-2.5-flash", contents=[uploaded_file, user_query]
             )
             break
         except ServerError as e:
@@ -62,5 +59,3 @@ def cv_analyser(pdf_path):
         print(f"Deleting uploaded file: {uploaded_file.name}...")
         client.files.delete(name=uploaded_file.name)
         print("File successfully deleted from the service.")
-
-cv_analyser("Sample.pdf")
